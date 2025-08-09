@@ -100,3 +100,8 @@ h1 {
   background-color: #555;
   transform: translateY(-3px);
 }
+
+footer {
+  color: #D63384;
+  opacity: 0.5;
+}
