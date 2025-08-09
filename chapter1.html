@@ -3,145 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm Of Light - Chapter 1</title>
-    <!-- Cute font -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Baloo 2', cursive;
-            background-color: #fff0f5;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h1 {
-            color: #d63384;
-            margin: 15px 0;
-        }
-
-        img {
-            max-width: 90%;
-            height: auto;
-            margin: 10px auto;
-            display: block;
-            border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        select {
-            padding: 8px;
-            font-size: 1em;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .nav-btn {
-            padding: 10px 20px;
-            background-color: #d63384;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .nav-btn:hover:not(.disabled) {
-            background-color: #ff4da6;
-        }
-
-        .disabled {
-            background-color: #bbb;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-    </style>
+    <title>Calm of Light - Chapter 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="chapternav.js"></script>
 </head>
 <body>
 
-    <h1>Calm Of Light - Chapter 1</h1>
+    <!-- Header (clickable to return home) -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Calm of Light</a></h1>
+    </header>
 
-    <!-- Top navigation -->
-    <div class="nav-container">
-        <a id="prevBtn" class="nav-btn">Previous Chapter</a>
-        <select id="chapterSelect"></select>
-        <a id="nextBtn" class="nav-btn">Next Chapter</a>
-    </div>
+    <!-- Chapter images -->
+    <main>
+        <div class="chapter-images">
+            <!-- Images 0 to 16 -->
+            <img src="images/calm-of-light Ch1.0.jpg" alt="Calm of Light - Chapter 1 Page 0">
+            <img src="images/calm-of-light Ch1.1.jpg" alt="Calm of Light - Chapter 1 Page 1">
+            <img src="images/calm-of-light Ch1.2.jpg" alt="Calm of Light - Chapter 1 Page 2">
+            <img src="images/calm-of-light Ch1.3.jpg" alt="Calm of Light - Chapter 1 Page 3">
+            <img src="images/calm-of-light Ch1.4.jpg" alt="Calm of Light - Chapter 1 Page 4">
+            <img src="images/calm-of-light Ch1.5.jpg" alt="Calm of Light - Chapter 1 Page 5">
+            <img src="images/calm-of-light Ch1.6.jpg" alt="Calm of Light - Chapter 1 Page 6">
+            <img src="images/calm-of-light Ch1.7.jpg" alt="Calm of Light - Chapter 1 Page 7">
+            <img src="images/calm-of-light Ch1.8.jpg" alt="Calm of Light - Chapter 1 Page 8">
+            <img src="images/calm-of-light Ch1.9.jpg" alt="Calm of Light - Chapter 1 Page 9">
+            <img src="images/calm-of-light Ch1.10.jpg" alt="Calm of Light - Chapter 1 Page 10">
+            <img src="images/calm-of-light Ch1.11.jpg" alt="Calm of Light - Chapter 1 Page 11">
+            <img src="images/calm-of-light Ch1.12.jpg" alt="Calm of Light - Chapter 1 Page 12">
+            <img src="images/calm-of-light Ch1.13.jpg" alt="Calm of Light - Chapter 1 Page 13">
+            <img src="images/calm-of-light Ch1.14.jpg" alt="Calm of Light - Chapter 1 Page 14">
+            <img src="images/calm-of-light Ch1.15.jpg" alt="Calm of Light - Chapter 1 Page 15">
+            <img src="images/calm-of-light Ch1.16.jpg" alt="Calm of Light - Chapter 1 Page 16">
+        </div>
+    </main>
 
-    <!-- Pages -->
-    <div id="chapter-pages"></div>
-
-    <!-- Bottom navigation -->
-    <div class="nav-container">
-        <a id="prevBtnBottom" class="nav-btn">Previous Chapter</a>
-        <select id="chapterSelectBottom"></select>
-        <a id="nextBtnBottom" class="nav-btn">Next Chapter</a>
-    </div>
-
-    <script>
-        // CONFIG
-        const totalChapters = 1; // how many chapters you have uploaded
-        const currentChapter = 1; // this page's chapter number
-        const totalPages = 17; // pages from 0 to 16
-
-        const container = document.getElementById('chapter-pages');
-
-        // Load all pages
-        for (let i = 0; i < totalPages; i++) {
-            const img = document.createElement('img');
-            img.src = `calm-of-light Ch${currentChapter}.${i}.jpg`;
-            img.alt = `Page ${i + 1}`;
-            container.appendChild(img);
-        }
-
-        // Populate chapter dropdowns
-        const chapterSelect = document.getElementById('chapterSelect');
-        const chapterSelectBottom = document.getElementById('chapterSelectBottom');
-        
-        for (let i = 1; i <= totalChapters; i++) {
-            const optionTop = document.createElement('option');
-            optionTop.value = i;
-            optionTop.textContent = `Chapter ${i}`;
-            if (i === currentChapter) optionTop.selected = true;
-            chapterSelect.appendChild(optionTop);
-
-            const optionBottom = optionTop.cloneNode(true);
-            chapterSelectBottom.appendChild(optionBottom);
-        }
-
-        // Handle dropdown change
-        chapterSelect.addEventListener('change', (e) => {
-            window.location.href = `chapter${e.target.value}.html`;
-        });
-        chapterSelectBottom.addEventListener('change', (e) => {
-            window.location.href = `chapter${e.target.value}.html`;
-        });
-
-        // Set Prev/Next button links & disable if needed
-        const prevBtns = [document.getElementById('prevBtn'), document.getElementById('prevBtnBottom')];
-        const nextBtns = [document.getElementById('nextBtn'), document.getElementById('nextBtnBottom')];
-
-        if (currentChapter > 1) {
-            prevBtns.forEach(btn => btn.href = `chapter${currentChapter - 1}.html`);
-        } else {
-            prevBtns.forEach(btn => btn.classList.add('disabled'));
-        }
-
-        if (currentChapter < totalChapters) {
-            nextBtns.forEach(btn => btn.href = `chapter${currentChapter + 1}.html`);
-        } else {
-            nextBtns.forEach(btn => btn.classList.add('disabled'));
-        }
-    </script>
+    <!-- Navigation buttons -->
+    <nav class="chapter-nav">
+        <button id="prev-chapter">Previous Chapter</button>
+        <button id="next-chapter">Next Chapter</button>
+    </nav>
 
 </body>
 </html>
