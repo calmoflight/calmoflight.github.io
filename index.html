@@ -7,38 +7,84 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fafafa;
+            background-color: #fff0f5; /* Light pink background */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d63384; /* Pink title */
+        }
+
+        .chapter-list {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .chapter {
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .chapter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .chapter img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .chapter-info {
+            flex: 1;
+            padding: 10px 15px;
+        }
+
+        .chapter-title {
+            font-size: 1.1em;
             margin: 0;
         }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.2em;
+
+        .read-btn {
+            padding: 8px 15px;
+            background-color: #d63384; /* Pink button */
             color: white;
-            background-color: #333;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
+            margin-right: 10px;
             transition: background 0.3s;
         }
-        a:hover {
-            background-color: #555;
+
+        .read-btn:hover {
+            background-color: #ff4da6; /* Lighter pink on hover */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Calm Of Light</h1>
-        <a href="chapter1.html">Chapter 1</a>
+
+    <h1>Calm Of Light</h1>
+
+    <div class="chapter-list">
+        <div class="chapter">
+            <img src="chapter1-thumb.jpg" alt="Chapter 1 Thumbnail">
+            <div class="chapter-info">
+                <p class="chapter-title">Chapter 1</p>
+            </div>
+            <a href="chapter1.html" class="read-btn">READ</a>
+        </div>
     </div>
+
 </body>
 </html>
