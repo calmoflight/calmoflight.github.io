@@ -1,1 +1,81 @@
+/* General page style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
 
+/* Main container */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chapter title */
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Chapter content */
+.chapter-content {
+  font-size: 1.1em;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+/* Navigation buttons container */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Individual buttons */
+.nav-buttons a {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 1em;
+  background: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.nav-buttons a:hover {
+  background: #0056b3;
+}
+
+/* Back to Home button (when no prev/next) */
+.nav-buttons .home-btn {
+  background: #28a745;
+}
+
+.nav-buttons .home-btn:hover {
+  background: #1e7e34;
+}
+
+/* Make buttons stack on mobile */
+@media (max-width: 500px) {
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .nav-buttons a {
+    flex: none;
+    width: 100%;
+  }
+}
