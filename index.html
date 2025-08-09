@@ -7,164 +7,9 @@
 
   <!-- Cute font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --pink-500: #d63384;
-      --pink-400: #ff4da6;
-      --bg: #fff0f5;
-      --card-bg: linear-gradient(180deg,#ffffff,#fff6fb);
-      --muted: #666;
-      --shadow: 0 6px 20px rgba(214,51,132,0.08);
-      --radius: 12px;
-    }
-
-    html,body{
-      height:100%;
-      margin:0;
-      background: var(--bg);
-      font-family: 'Baloo 2', cursive;
-      color:#222;
-    }
-
-    .wrap{
-      max-width:1000px;
-      margin:28px auto;
-      padding:18px;
-    }
-
-    header{
-      text-align:center;
-      margin-bottom:18px;
-    }
-
-    h1{
-      margin:0 0 6px 0;
-      font-size:2.1rem;
-      color:var(--pink-500);
-      letter-spacing:0.6px;
-    }
-
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-
-    /* top jump dropdown */
-    .top-nav{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      margin:16px 0 26px;
-      align-items:center;
-    }
-    .top-nav label{ font-size:0.95rem; color:var(--muted); }
-    .top-nav select{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid rgba(0,0,0,0.08);
-      font-family:inherit;
-      font-weight:600;
-      cursor:pointer;
-      background:white;
-    }
-
-    /* grid of chapter cards */
-    .chapter-list{
-      display:grid;
-      grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
-      gap:18px;
-      align-items:start;
-    }
-
-    .chapter{
-      background:var(--card-bg);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      transition:transform .15s ease, box-shadow .15s ease;
-      border:1px solid rgba(214,51,132,0.06);
-    }
-    .chapter:hover{
-      transform:translateY(-6px);
-      box-shadow: 0 12px 30px rgba(214,51,132,0.12);
-    }
-
-    .thumb{
-      width:100%;
-      height:170px;
-      object-fit:cover;
-      display:block;
-      background:linear-gradient(180deg,#ffeefb,#fff);
-    }
-
-    .chapter-body{
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      flex:1;
-    }
-
-    .chapter-title{
-      font-size:1.05rem;
-      margin:0;
-      color:#2b2b2b;
-    }
-
-    .chapter-meta{
-      font-size:0.9rem;
-      color:var(--muted);
-      margin-top:4px;
-      flex:1;
-    }
-
-    .read-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:8px;
-    }
-
-    .read-btn{
-      display:inline-block;
-      padding:9px 14px;
-      border-radius:10px;
-      text-decoration:none;
-      color:#fff;
-      background:var(--pink-500);
-      font-weight:700;
-      box-shadow: 0 6px 18px rgba(214,51,132,0.12);
-      transition:background .12s ease, transform .08s;
-    }
-    .read-btn:hover{ background:var(--pink-400); transform:translateY(-2px); }
-
-    .badge{
-      font-size:0.8rem;
-      color:var(--pink-500);
-      font-weight:700;
-      padding:6px 8px;
-      border-radius:999px;
-      border:1px solid rgba(214,51,132,0.08);
-      background:rgba(255,77,166,0.06);
-    }
-
-    footer{
-      text-align:center;
-      margin-top:28px;
-      color:var(--muted);
-      font-size:0.9rem;
-    }
-
-    /* responsive tweaks */
-    @media (max-width:520px){
-      h1{ font-size:1.6rem; }
-      .thumb{ height:140px; }
-    }
-  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <div class="wrap">
@@ -174,12 +19,12 @@
       <p class="subtitle">click a chapter to read</p>
     </header>
 
-    <!-- top jump (pure HTML) -->
+    <!-- top jump -->
     <div class="top-nav" aria-hidden="false">
       <label for="jump">Jump to</label>
       <select id="jump" onchange="if(this.value) location.href=this.value">
-        <!-- update these options manually or later via a script -->
         <option value="chapter1.html" selected>Chapter 1</option>
+        <!-- Future chapters -->
         <!-- <option value="chapter2.html">Chapter 2</option> -->
       </select>
     </div>
@@ -192,7 +37,7 @@
         <div class="chapter-body">
           <div>
             <p class="chapter-title">Chapter 1 ♥ Calm Of Light</p>
-            <p class="chapter-meta">Pages: 16 • Uploaded: May, 23 2025</p>
+            <p class="chapter-meta">Pages: 16 • Uploaded: May 23, 2025</p>
           </div>
 
           <div class="read-row">
@@ -201,26 +46,16 @@
           </div>
         </div>
       </article>
-
-      <!-- Add more chapter cards like this when needed -->
-      <!--
-      <article class="chapter">
-        <img class="thumb" src="chapter2-cover.jpg" alt="Chapter 2 cover">
-        <div class="chapter-body">
-          <p class="chapter-title">Chapter 2 — Title</p>
-          <p class="chapter-meta">Pages: XX • Uploaded: YYYY-MM-DD</p>
-          <div class="read-row">
-            <a class="read-btn" href="chapter2.html">READ</a>
-            <span class="badge">Ongoing</span>
-          </div>
-        </div>
-      </article>
-      -->
     </section>
 
     <footer>
       <p>♥A♥M♥A♥N♥O♥</p>
     </footer>
   </div>
+
+  <!-- Scroll to Top Button -->
+  <a href="#top" class="scroll-to-top">↑</a>
+  <div id="top"></div>
+
 </body>
 </html>
