@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <div class="wrap">
 
     <header>
@@ -20,17 +20,15 @@
     </header>
 
     <!-- top jump -->
-    <div class="top-nav" aria-hidden="false">
+    <div class="top-nav">
       <label for="jump">Jump to</label>
       <select id="jump" onchange="if(this.value) location.href=this.value">
         <option value="chapter1.html" selected>Chapter 1</option>
-        <!-- Future chapters -->
-        <!-- <option value="chapter2.html">Chapter 2</option> -->
       </select>
     </div>
 
     <!-- chapter cards -->
-    <section class="chapter-list" aria-live="polite">
+    <section class="chapter-list">
       <!-- CHAPTER 1 -->
       <article class="chapter">
         <img class="thumb" src="images/chapter1-thumb.jpg" alt="Calm Of Light — Chapter 1 cover">
@@ -55,7 +53,5 @@
 
   <!-- Scroll to Top Button -->
   <a href="#top" class="scroll-to-top">↑</a>
-  <div id="top"></div>
-
 </body>
 </html>
