@@ -1,6 +1,6 @@
 // chapternav.js
 // Change only THIS value when you add new chapters
-const totalChapters = 400;
+const totalChapters = 1;
 
 // Automatically generate chapter links
 function generateChapterLinks(currentChapter) {
