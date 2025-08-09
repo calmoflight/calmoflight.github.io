@@ -8,8 +8,9 @@
   <!-- Cute font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  
 </head>
 <body id="top">
   <div class="wrap">
@@ -19,16 +20,8 @@
       <p class="subtitle">click a chapter to read</p>
     </header>
 
-    <!-- top jump -->
-    <div class="top-nav">
-      <label for="jump">Jump to</label>
-      <select id="jump" onchange="if(this.value) location.href=this.value">
-        <option value="chapter1.html" selected>Chapter 1</option>
-      </select>
-    </div>
-
     <!-- chapter cards -->
-    <section class="chapter-list">
+    <section class="chapter-list cls-card">
       <!-- CHAPTER 1 -->
       <article class="chapter">
         <img class="thumb" src="images/chapter1-thumb.jpg" alt="Calm Of Light — Chapter 1 cover">
@@ -39,7 +32,7 @@
           </div>
 
           <div class="read-row">
-            <a class="read-btn" href="chapter1.html">READ</a>
+            <a class="read-btn" href="/chapters/chapter1.html">READ</a>
             <span class="badge">New</span>
           </div>
         </div>
