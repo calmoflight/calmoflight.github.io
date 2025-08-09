@@ -1,15 +1,29 @@
-// Simple chapter navigation
-const currentChapter = parseInt(document.body.getAttribute("data-chapter"), 10);
-const totalChapters = 1; // Change this when you add more chapters
+// Change this ONE number when you add a new chapter
+const totalChapters = 400;  
 
-function goToChapter(chapter) {
-    window.location.href = `chapter${chapter}.html`;
-}
+// Current chapter detection (based on the file name)
+const currentChapter = parseInt(window.location.pathname.match(/chapter(\d+)\.html$/)?.[1] || "1");
 
-document.getElementById("prev-btn").addEventListener("click", () => {
-    if (currentChapter > 1) goToChapter(currentChapter - 1);
-});
+// Navigation logic
+const prevChapter = currentChapter > 1 ? `chapter${currentChapter - 1}.html` : null;
+const nextChapter = currentChapter < totalChapters ? `chapter${currentChapter + 1}.html` : null;
 
-document.getElementById("next-btn").addEventListener("click", () => {
-    if (currentChapter < totalChapters) goToChapter(currentChapter + 1);
+// Inject nav buttons
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("chapter-nav");
+  if (!nav) return;
+
+  if (prevChapter) {
+    const prevBtn = document.createElement("a");
+    prevBtn.href = prevChapter;
+    prevBtn.textContent = "⬅ Previous";
+    nav.appendChild(prevBtn);
+  }
+
+  if (nextChapter) {
+    const nextBtn = document.createElement("a");
+    nextBtn.href = nextChapter;
+    nextBtn.textContent = "Next ➡";
+    nav.appendChild(nextBtn);
+  }
 });
