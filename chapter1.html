@@ -1,41 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm of Light - Chapter 1</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="chapternav.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calm of Light — Chapter 1</title>
+
+  <!-- Cute font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink-500: #d63384;
+      --pink-400: #ff4da6;
+      --bg: #fff0f5;
+      --card-bg: linear-gradient(180deg,#ffffff,#fff6fb);
+      --muted: #666;
+      --shadow: 0 6px 20px rgba(214,51,132,0.08);
+      --radius: 12px;
+    }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Baloo 2', cursive;
+      color: #222;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 2.1rem;
+      color: var(--pink-500);
+      letter-spacing: 0.6px;
+    }
+
+    .chapter-pages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .chapter-pages img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    nav.chapter-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    nav.chapter-nav a {
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      background: var(--pink-500);
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(214,51,132,0.12);
+      transition: background .12s ease, transform .08s;
+    }
+
+    nav.chapter-nav a:hover {
+      background: var(--pink-400);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
     <header>
-        <h1><a href="index.html">Calm of Light</a></h1>
+      <h1><a href="index.html" style="color: var(--pink-500); text-decoration: none;">Calm Of Light — Chapter 1</a></h1>
     </header>
 
-    <main id="chapter-container">
-        <!-- Chapter images -->
-        <img src="images/calm-of-light Ch1.0.jpg" alt="Calm of Light Chapter 1 Page 0">
-        <img src="images/calm-of-light Ch1.1.jpg" alt="Calm of Light Chapter 1 Page 1">
-        <img src="images/calm-of-light Ch1.2.jpg" alt="Calm of Light Chapter 1 Page 2">
-        <img src="images/calm-of-light Ch1.3.jpg" alt="Calm of Light Chapter 1 Page 3">
-        <img src="images/calm-of-light Ch1.4.jpg" alt="Calm of Light Chapter 1 Page 4">
-        <img src="images/calm-of-light Ch1.5.jpg" alt="Calm of Light Chapter 1 Page 5">
-        <img src="images/calm-of-light Ch1.6.jpg" alt="Calm of Light Chapter 1 Page 6">
-        <img src="images/calm-of-light Ch1.7.jpg" alt="Calm of Light Chapter 1 Page 7">
-        <img src="images/calm-of-light Ch1.8.jpg" alt="Calm of Light Chapter 1 Page 8">
-        <img src="images/calm-of-light Ch1.9.jpg" alt="Calm of Light Chapter 1 Page 9">
-        <img src="images/calm-of-light Ch1.10.jpg" alt="Calm of Light Chapter 1 Page 10">
-        <img src="images/calm-of-light Ch1.11.jpg" alt="Calm of Light Chapter 1 Page 11">
-        <img src="images/calm-of-light Ch1.12.jpg" alt="Calm of Light Chapter 1 Page 12">
-        <img src="images/calm-of-light Ch1.13.jpg" alt="Calm of Light Chapter 1 Page 13">
-        <img src="images/calm-of-light Ch1.14.jpg" alt="Calm of Light Chapter 1 Page 14">
-        <img src="images/calm-of-light Ch1.15.jpg" alt="Calm of Light Chapter 1 Page 15">
-        <img src="images/calm-of-light Ch1.16.jpg" alt="Calm of Light Chapter 1 Page 16">
-    </main>
+    <div class="chapter-pages">
+      <img src="images/calm-of-light Ch1.0.jpg" alt="Page 0">
+      <img src="images/calm-of-light Ch1.1.jpg" alt="Page 1">
+      <img src="images/calm-of-light Ch1.2.jpg" alt="Page 2">
+      <img src="images/calm-of-light Ch1.3.jpg" alt="Page 3">
+      <img src="images/calm-of-light Ch1.4.jpg" alt="Page 4">
+      <img src="images/calm-of-light Ch1.5.jpg" alt="Page 5">
+      <img src="images/calm-of-light Ch1.6.jpg" alt="Page 6">
+      <img src="images/calm-of-light Ch1.7.jpg" alt="Page 7">
+      <img src="images/calm-of-light Ch1.8.jpg" alt="Page 8">
+      <img src="images/calm-of-light Ch1.9.jpg" alt="Page 9">
+      <img src="images/calm-of-light Ch1.10.jpg" alt="Page 10">
+      <img src="images/calm-of-light Ch1.11.jpg" alt="Page 11">
+      <img src="images/calm-of-light Ch1.12.jpg" alt="Page 12">
+      <img src="images/calm-of-light Ch1.13.jpg" alt="Page 13">
+      <img src="images/calm-of-light Ch1.14.jpg" alt="Page 14">
+      <img src="images/calm-of-light Ch1.15.jpg" alt="Page 15">
+      <img src="images/calm-of-light Ch1.16.jpg" alt="Page 16">
+    </div>
 
     <nav class="chapter-nav">
-        <button id="prev-chapter" disabled>Previous Chapter</button>
-        <button id="next-chapter" disabled>Next Chapter</button>
+      <a href="#" style="visibility:hidden;">Previous</a>
+      <a href="chapter2.html">Next Chapter</a>
     </nav>
+
+    <footer>
+      <p>♥A♥M♥A♥N♥O♥</p>
+    </footer>
+  </div>
 </body>
 </html>
