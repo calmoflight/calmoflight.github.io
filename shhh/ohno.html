@@ -2,11 +2,61 @@
 <html lang="en">
 <head>
   <style>
-  @keyframes weirdColors {
-    0% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(2); }
-    50% { background-position: 100% 50%; filter: hue-rotate(180deg) saturate(3); }
-    100% { background-position: 0% 50%; filter: hue-rotate(360deg) saturate(2); }
-  }
+    /* Pitch-black background with glitch flicker */
+    @keyframes glitchBackground {
+      0%, 100% { background-color: black; filter: contrast(1) brightness(1); }
+      10% { background-color: #050505; filter: contrast(2) brightness(1.5) hue-rotate(10deg); }
+      20% { background-color: black; filter: contrast(1.5) brightness(0.8) hue-rotate(-15deg); }
+      30% { background-color: #0a0a0a; filter: contrast(3) brightness(2) hue-rotate(45deg); }
+      50% { background-color: black; filter: contrast(1) brightness(1); }
+      70% { background-color: #080808; filter: contrast(2.5) brightness(0.9) hue-rotate(-30deg); }
+      90% { background-color: black; filter: contrast(1.2) brightness(1.2); }
+    }
+
+    /* Glitchy text effect */
+    @keyframes glitchText {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      20% { text-shadow: -2px 0 lime, 2px 0 magenta; }
+      40% { text-shadow: 2px 0 yellow, -2px 0 blue; }
+      60% { text-shadow: -3px 0 red, 3px 0 cyan; }
+      80% { text-shadow: 3px 0 lime, -3px 0 magenta; }
+      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      animation: glitchBackground 3s infinite steps(1);
+      font-family: 'Share Tech Mono', monospace;
+      color: white;
+    }
+
+    h1, .subtitle, footer p {
+      animation: glitchText 1s infinite;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .cls-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cls-button {
+      background: rgba(255, 0, 0, 0.3);
+      border: 1px solid red;
+      padding: 0.5rem 1rem;
+      transition: all 0.2s;
+    }
+
+    .cls-button:hover {
+      background: red;
+      border-color: white;
+      color: black;
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +69,7 @@
   <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
 </head>
-<body style="
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(270deg, #ff00ff, #00ffff, #ffff00, #ff0000);
-  background-size: 800% 800%;
-  animation: weirdColors 10s ease infinite;
-">
+<body>
 
   <header>
     <h1>? ! ? Spinning Mikahil... ! ? !</h1>
